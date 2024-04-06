@@ -15,7 +15,7 @@ const MainLayout = async ({ children }: { children: ReactNode }) => {
 	}
 
 	if (!user!.account.isOnboarded) {
-		redirect('/onboarding')
+		redirect('/onboarding/initial')
 	}
 	
 	return (

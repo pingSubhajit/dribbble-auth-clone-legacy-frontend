@@ -15,7 +15,7 @@ const AuthLayout = async ({children}: {children: ReactNode}) => {
 	}
 	
 	return (
-		<div className="min-h-screen flex justify-end">
+		<main className="min-h-screen flex justify-end">
 			<div className="h-screen w-[40%] fixed top-0 left-0 p-24">
 				<video src="/auth-video.mp4" autoPlay muted loop className="h-full object-cover absolute top-0 left-0 -z-10"></video>
 
@@ -29,7 +29,7 @@ const AuthLayout = async ({children}: {children: ReactNode}) => {
 			<div className="w-[60%]">
 				{children}
 			</div>
-		</div>
+		</main>
 	)
 }
 
