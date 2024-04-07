@@ -18,7 +18,7 @@ export const getCurrentUser = async (): Promise<{ data: User }> => {
 		if (res.status === 401) throw new Error('Unauthorized. Please log in again')
 		
 		const response = await res.json()
-		throw new Error(response)
+		throw response
 	}
 
 	return await res.json() as Promise<{ data: User }>
@@ -61,8 +61,51 @@ export const onboardUser = async ( params: OnboardUserParams ): Promise<{ succes
 	if (!res.ok) {
 		if (res.status === 401) throw new Error('Unauthorized. Please log in again')
 		const response = await res.json()
-		throw new Error(response)
+		throw response
 	}
 
 	return await res.json() as Promise<{ success: boolean, data: Account }>
+}
+
+export const resendVerificationEmail = async (): Promise<{ success: boolean, message: string }> => {
+	const token = getCookie('token', { cookies })
+	if (!token) throw new UNAUTHORIZED_ERROR
+
+	const requestUrl = `${process.env.BACKEND}/user/resend-email`
+	const res = await fetch(requestUrl, {
+		headers: {
+			'Authorization': `Bearer ${token}`
+		}
+	})
+
+	if (!res.ok) {
+		if (res.status === 401) throw new Error('Unauthorized. Please log in again')
+		const response = await res.json()
+		throw response
+	}
+
+	return await res.json() as Promise<{ success: boolean, message: string }>
+}
+
+export const verifyUser = async (verifyCode: string): Promise<{ success: boolean, message: string }> => {
+	const token = getCookie('token', { cookies })
+	if (!token) throw new UNAUTHORIZED_ERROR
+
+	const requestUrl = `${process.env.BACKEND}/user/verify/`
+	const res = await fetch(requestUrl, {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+			'Authorization': `Bearer ${token}`
+		},
+		body: JSON.stringify({ token: verifyCode })
+	})
+
+	if (!res.ok) {
+		if (res.status === 401) throw new Error('Unauthorized. Please log in again')
+		const response = await res.json()
+		throw response
+	}
+
+	return await res.json() as Promise<{ success: boolean, message: string }>
 }

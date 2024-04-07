@@ -24,7 +24,7 @@ export const checkUsername = async ( username: string ): Promise<{ message: stri
 
 	if (!res.ok) {
 		const response = await res.json()
-		throw new Error(response)
+		throw response
 	}
 
 	return await res.json() as Promise<{ message: string }>
@@ -43,7 +43,7 @@ export const register = async ( params?: RegisterParams ): Promise<{ success: bo
 
 	if (!res.ok) {
 		const response = await res.json()
-		throw new Error(response)
+		throw response
 	}
 
 	return await res.json() as Promise<{ success: boolean, message: string, data: User }>
@@ -67,7 +67,7 @@ export const login = async ( email: string, password: string ): Promise<LoginRes
 
 	if (!res.ok) {
 		const response = await res.json()
-		throw new Error(response)
+		throw response
 	}
 
 	return await res.json() as Promise<LoginResponse>
@@ -99,7 +99,7 @@ export const changeEmail = async ( email: string ): Promise<ChangeEmailResponse>
 	if (!res.ok) {
 		if (res.status === 401) throw new Error('Unauthorized. Please log in again')
 		const response = await res.json()
-		throw new Error(response)
+		throw response
 	}
 
 	return await res.json() as Promise<ChangeEmailResponse>

@@ -6,24 +6,16 @@ import {Input} from '@/components/ui/input'
 import {z} from 'zod'
 import {useForm} from 'react-hook-form'
 import {zodResolver} from '@hookform/resolvers/zod'
-import {redirect, useRouter} from 'next/navigation'
+import {useRouter} from 'next/navigation'
 import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from '@/components/ui/form'
 import {useState} from 'react'
 import backend from '@/lib/backend/backend'
 import {toast} from 'sonner'
 import {LoaderCircle} from 'lucide-react'
-import Image from "next/image";
-
-const MAX_FILE_SIZE = 5000000
-const ACCEPTED_IMAGE_TYPES = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp']
+import Image from 'next/image'
 
 const formSchema = z.object({
 	image: z.any({required_error: 'Please choose an image'}),
-	// .refine((file) => file?.size <= MAX_FILE_SIZE, 'Max image size is 5MB.')
-	// .refine(
-	// 	(file) => ACCEPTED_IMAGE_TYPES.includes(file?.type),
-	// 	'Only .jpg, .jpeg, .png and .webp formats are supported.'
-	// ),
 	location: z.string({required_error: 'Location is required'}).min(2, {
 		message: 'Location must be at least 2 characters.',
 	})
@@ -52,8 +44,8 @@ const InitialOnboardingForm = () => {
 			})
 			toast.success('Details added successfully')
 			router.push('/onboarding/conclusion')
-		} catch (error) {
-			toast.error('Failed to add details')
+		} catch (error) { // @ts-ignore
+			toast.error(error.message ?? 'Failed to add details')
 		}
 	}
 
@@ -78,8 +70,8 @@ const InitialOnboardingForm = () => {
 		})
 
 		if (!response.ok) {
-			console.log(await response.json())
-			throw new Error('Failed to upload image')
+			const res = await response.json()
+			throw new Error(`Failed to upload image. ${res.error.message}`)
 		}
 
 		const data = await response.json()
@@ -120,7 +112,6 @@ const InitialOnboardingForm = () => {
 
 						<p className="font-semibold text-zinc-400 mt-4"> {'>'} Or choose one of our defaults </p>
 					</div>
-					{/* Avatar upload button */}
 				</div>
 
 

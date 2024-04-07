@@ -116,7 +116,7 @@ const SignUpForm = () => {
 								<FormItem onBlur={checkUsername} className="w-full">
 									<FormLabel>Username</FormLabel>
 									<FormControl>
-										<Input placeholder="Full name" {...field} />
+										<Input placeholder="Username" {...field} />
 									</FormControl>
 								</FormItem>
 							)}

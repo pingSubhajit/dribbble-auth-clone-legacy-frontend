@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import SignUpForm from '@/components/SignUpForm'
 
-const SignUpPage = () => {
+const SignUpPage = async () => {
 	return (
 		<div className="flex flex-col p-10">
 			<p className="text-right mb-16">

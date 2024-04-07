@@ -25,7 +25,7 @@ const OnboardingLayout = async ({ children }: { children: ReactNode }) => {
 				<LogoMark fill="#EA4C89" className="w-32"/>
 			</header>
 
-			<div className="w-[50%] mt-16 mx-auto">
+			<div className="w-[60%] mt-16 mx-auto">
 				{children}
 			</div>
 		</main>
