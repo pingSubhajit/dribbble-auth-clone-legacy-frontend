@@ -12,9 +12,9 @@ import {
 	DialogHeader,
 	DialogTitle,
 	DialogTrigger
-} from "@/components/ui/dialog";
-import ChangeEmailForm from "@/components/ChangeEmailForm";
-import ResendEmailButton from "@/components/ResendEmailButton";
+} from '@/components/ui/dialog'
+import ChangeEmailForm from '@/components/ChangeEmailForm'
+import ResendEmailButton from '@/components/ResendEmailButton'
 
 export const metadata: Metadata = {
 	title: 'Verify your email address',

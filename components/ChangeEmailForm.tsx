@@ -12,7 +12,7 @@ import {Checkbox} from '@/components/ui/checkbox'
 import {CheckedState} from '@radix-ui/react-checkbox'
 import {Button} from '@/components/ui/button'
 import {LoaderCircle} from 'lucide-react'
-import {revalidatePath} from "next/cache";
+import {revalidatePath} from 'next/cache'
 
 const formSchema = z.object({
 	email: z.string().email({message: 'Please enter a valid email address'})
