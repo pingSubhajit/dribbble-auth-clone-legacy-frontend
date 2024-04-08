@@ -130,7 +130,7 @@ const SignUpForm = () => {
 							<FormItem>
 								<FormLabel>Email</FormLabel>
 								<FormControl>
-									<Input placeholder="john@acme.com" {...field} />
+									<Input type="email" placeholder="john@acme.com" {...field} />
 								</FormControl>
 							</FormItem>
 						)}
