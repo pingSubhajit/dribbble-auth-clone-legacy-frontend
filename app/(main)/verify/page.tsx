@@ -5,6 +5,16 @@ import backend from '@/lib/backend/backend'
 import {Button} from '@/components/ui/button'
 import {redirect} from 'next/navigation'
 import {Metadata} from 'next'
+import {
+	Dialog,
+	DialogContent,
+	DialogDescription,
+	DialogHeader,
+	DialogTitle,
+	DialogTrigger
+} from "@/components/ui/dialog";
+import ChangeEmailForm from "@/components/ChangeEmailForm";
+import ResendEmailButton from "@/components/ResendEmailButton";
 
 export const metadata: Metadata = {
 	title: 'Verify your email address',
@@ -48,13 +58,26 @@ const VerifyPage = async ({searchParams}: {params: Params, searchParams: Params}
 				<p className="mt-4 opacity-80 text-lg">
 					Didn't receive the email? Check your spam folder, it may have been caught by a filter. If you still
 					don't see it, you can
-					<Button variant="link" className="p-0 text-lg h-auto text-dribbblePink">&nbsp; resend the
-						confirmation email</Button>
+					<ResendEmailButton />
 				</p>
 
 				<p className="mt-4 opacity-80 text-lg">
 					Wrong email address?
-					<Button variant="link" className="p-0 text-lg h-auto text-dribbblePink">&nbsp; Change it.</Button>
+					<Dialog>
+						<DialogTrigger asChild>
+							<Button variant="link" className="p-0 text-lg h-auto text-dribbblePink">&nbsp; Change it.</Button>
+						</DialogTrigger>
+						<DialogContent>
+							<DialogHeader>
+								<DialogTitle>Change your email address</DialogTitle>
+								<DialogDescription>
+									This action cannot be undone. This will change your email address to the new one
+								</DialogDescription>
+							</DialogHeader>
+
+							<ChangeEmailForm />
+						</DialogContent>
+					</Dialog>
 				</p>
 			</div>
 		</div>

@@ -4,6 +4,7 @@ import {User} from '@/lib/backend/backend'
 import {getCookie} from 'cookies-next'
 import {cookies} from 'next/headers'
 import {UNAUTHORIZED_ERROR} from '@/lib/backend/errors'
+import {revalidatePath} from "next/cache";
 
 interface RegisterParams {
 	name: string
@@ -102,6 +103,7 @@ export const changeEmail = async ( email: string ): Promise<ChangeEmailResponse>
 		throw response
 	}
 
+	revalidatePath('/verify')
 	return await res.json() as Promise<ChangeEmailResponse>
 }
 

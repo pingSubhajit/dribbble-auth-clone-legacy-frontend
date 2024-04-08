@@ -13,12 +13,6 @@ import {Check, LoaderCircle} from 'lucide-react'
 import {Checkbox} from '@/components/ui/checkbox'
 import {motion} from 'framer-motion'
 
-// const formSchema = z.object({
-// 	purpose: z.array(z.object({
-// 		type: z.nativeEnum(Purpose),
-// 	}), {required_error: 'Please select at least one purpose'})
-// })
-
 const formSchema = z.object({
 	purpose: z.array(z.string(), {required_error: 'Please select at least one purpose'})
 })
@@ -32,7 +26,7 @@ const items = [
 	},
 	{
 		id: 'HIRE',
-		label: 'I\'m looking to hire a designer',
+		label: 'I\'m looking to hire a designer for a project',
 		description: 'Find the perfect designer for your project to bring your ideas to life.',
 		image: '/hire.svg'
 	},
