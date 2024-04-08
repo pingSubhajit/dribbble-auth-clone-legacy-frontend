@@ -106,7 +106,7 @@ const SignInForm = () => {
 
 					<Button size="lg" className="bg-dribbblePink rounded-lg" type="submit" disabled={form.formState.isSubmitting}>
 						{form.formState.isSubmitting && <LoaderCircle className="w-4 h-4 mr-2 animate-spin" />}
-						Create Account
+						Sign In
 					</Button>
 				</form>
 			</Form>
