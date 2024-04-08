@@ -4,7 +4,7 @@ import {Button} from '@/components/ui/button'
 import {Search} from 'lucide-react'
 import {Avatar, AvatarFallback, AvatarImage} from '@/components/ui/avatar'
 import Link from 'next/link'
-import {cn} from "@/lib/utils";
+import {cn} from '@/lib/utils'
 
 const SearchBox = ({className}: {className?: string}) => {
 	return (

@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import handleRedirects from '@/lib/redirects'
 import {Metadata} from 'next'
-import LogoMark from "@/icons/LogoMark";
+import LogoMark from '@/icons/LogoMark'
 
 export const metadata: Metadata = {
 	title: 'Welcome to Dribbble',
