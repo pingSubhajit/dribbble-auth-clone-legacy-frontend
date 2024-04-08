@@ -13,6 +13,16 @@ styling purposes.
 You can find the backend of the assignment [here](https://github.com/pingSubhajit/dribbble-auth-clone-legacy-backend)
 and the backend has been deployed [here](http://dribbble.subhajitkundu.me/).
 
+### Features
+- **Login and Signup**: The user can login and signup using the application.
+- **Protected Routes**: The user can only access the home page after logging in.
+- **Log out**: The user can log out of the application.
+- **Automatic redirection**: The user will be redirected to the relevant page based on their onboarding stage.
+- **Verify email**: The user will be asked to verify their email after signing up.
+- **Change email**: The user can change their email address on the /verify page.
+- **Resend verification email**: The user can resend the verification email if they haven't received it.
+- **Responsive Design**: The application is fully responsive and can be used on any device.
+
 ### Local development server
 
 - First clone the repository and run `npm install` to install all the dependencies.
