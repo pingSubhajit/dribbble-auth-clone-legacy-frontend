@@ -5,12 +5,12 @@ import {redirect} from 'next/navigation'
 import LogoMark from '@/icons/LogoMark'
 
 const OnboardingLayout = async ({ children }: { children: ReactNode }) => {
-	let user
+	let user = null
 	try {
 		const {data: userFromDb} = await backend.user.getCurrentUser()
 		user = userFromDb
 	} catch (error) {
-		if (error instanceof UNAUTHORIZED_ERROR && error.code === 401) {
+		if ((error instanceof UNAUTHORIZED_ERROR && error.code === 401) || !user) {
 			redirect('/auth/sign-up')
 		}
 	}
