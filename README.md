@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Aeonaxy Assignment
 
-## Getting Started
+### Dribbble Auth Clone: Full Stack Dev Internship
 
-First, run the development server:
+```NEXT.JS VERSION```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+<hr>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This is the frontend of the assignment for full-stack development internship opening at Aeonaxy Technologies. This
+particular assignment is created using Next.Js, the React framework for the web. Tailwind CSS has been used for the
+styling purposes.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+You can find the backend of the assignment [here](https://github.com/pingSubhajit/dribbble-auth-clone-legacy-backend)
+and the backend has been deployed [here](http://dribbble.subhajitkundu.me/).
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Local development server
 
-## Learn More
+- First clone the repository and run `npm install` to install all the dependencies.
+- Run `npm run dev` to start the development server.
+- Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-To learn more about Next.js, take a look at the following resources:
+### Environment variables
+- Create a `.env` file in the root directory of the project.
+- Add the following environment variables in the `.env` file:
+  ```bash
+  BACKEND="https://dribbble.subhajitkundu.me/api" // Or the local backend server URL suffixed with /api
+  ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Idea behind using Next.Js
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Next.Js is a React framework that is used to create server-side rendered applications. It is a very powerful tool
+that can be used to create static websites, server-side rendered websites, and also single page applications. It is
+very easy to use and has a lot of features that can be used to create a very powerful application.
 
-## Deploy on Vercel
+- **Industry standard**: React is hardly used in production in industries where the product is the web application
+  itself.Next.Js is an industry standard for creating React applications.
+- **Server-side rendering**: Next.Js is used to create server-side rendered applications. This means that the server
+  will render the page and send it to the client. This is very useful for SEO purposes as the search engines can
+  easily crawl the website and index it.
+- **Full stack capabilities**: Next.Js has full stack capabilities. This means that you can create both the front-end
+  and the back-end of the application using Next.Js. You can create APIs, connect to databases, and do a lot more
+  using Next.Js.
+- **Meaning abstractions**: Next.Js has a lot of abstractions that make it very easy to create applications. You can
+  create pages, components, and layouts and play with advanced react features such as React.lazy and suspence without significant overhead.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) for more information.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Deployment
+
+This application has been deployed on Vercel. You can check out the live
+demo [here](https://dribbble-auth-clone-legacy-aeonaxy.vercel.app/).
