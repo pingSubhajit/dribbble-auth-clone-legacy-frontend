@@ -104,3 +104,10 @@ export const changeEmail = async ( email: string ): Promise<ChangeEmailResponse>
 
 	return await res.json() as Promise<ChangeEmailResponse>
 }
+
+export const logout = async (): Promise<void> => {
+	const token = getCookie('token', { cookies })
+	if (!token) throw new UNAUTHORIZED_ERROR
+
+	cookies().delete('token')
+}

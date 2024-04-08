@@ -1,4 +1,4 @@
-import {changeEmail, checkUsername, login, register} from '@/lib/backend/auth'
+import {changeEmail, checkUsername, login, register, logout} from '@/lib/backend/auth'
 import {getCurrentUser, onboardUser, resendVerificationEmail, verifyUser} from '@/lib/backend/user'
 
 const backend = {
@@ -6,13 +6,14 @@ const backend = {
 		checkUsername,
 		register,
 		login,
+		logout,
 		changeEmail
 	},
 	user: {
 		getCurrentUser,
 		onboardUser,
 		resendVerificationEmail,
-		verifyUser
+		verifyUser,
 	}
 }
 
