@@ -1,4 +1,4 @@
-import LogoMark from "@/icons/LogoMark";
+import LogoMark from '@/icons/LogoMark'
 
 const footerLinks = [
 	{

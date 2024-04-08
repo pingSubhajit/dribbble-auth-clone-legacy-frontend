@@ -1,5 +1,11 @@
 import ConclusionOnboardingForm from '@/components/ConclusionOnboardingForm'
 import handleRedirects from '@/lib/redirects'
+import {Metadata} from 'next'
+
+export const metadata: Metadata = {
+	title: 'What brings you to Dribbble?',
+	description: 'Select the options that best describes you. Don\'t worry, you can explore other options later.',
+}
 
 const ConclusionOnboardingPage = async () => {
 	await handleRedirects('/onboarding/conclusion')

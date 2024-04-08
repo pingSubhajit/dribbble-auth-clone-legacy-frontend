@@ -1,5 +1,11 @@
 import InitialOnboardingForm from '@/components/InitialOnboardingForm'
 import handleRedirects from '@/lib/redirects'
+import {Metadata} from 'next'
+
+export const metadata: Metadata = {
+	title: 'Create your profile',
+	description: 'Let others get to know you better! You can\'t do these later',
+}
 
 const InitialOnboardingPage = async () => {
 	await handleRedirects('/onboarding/initial')

@@ -1,5 +1,11 @@
 import Image from 'next/image'
 import handleRedirects from '@/lib/redirects'
+import {Metadata} from 'next'
+
+export const metadata: Metadata = {
+	title: 'Welcome to Dribbble',
+	description: 'Get started with Dribbble'
+}
 
 export default async function Home() {
 	await handleRedirects('/')

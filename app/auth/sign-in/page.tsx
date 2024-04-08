@@ -1,5 +1,11 @@
 import Link from 'next/link'
 import SignInForm from '@/components/SignInForm'
+import {Metadata} from 'next'
+
+export const metadata: Metadata = {
+	title: 'Sign in to Dribbble',
+	description: 'Sign in to Dribbble to access your account and start sharing your work with the world.'
+}
 
 const SignInPage = async () => {
 	return (

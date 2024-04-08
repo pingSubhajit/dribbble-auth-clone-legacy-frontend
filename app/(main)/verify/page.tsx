@@ -4,8 +4,14 @@ import Mail from '@/icons/Mail'
 import backend from '@/lib/backend/backend'
 import {Button} from '@/components/ui/button'
 import {redirect} from 'next/navigation'
+import {Metadata} from 'next'
 
-const VerifyPage = async ({params, searchParams}: {params: Params, searchParams: Params}) => {
+export const metadata: Metadata = {
+	title: 'Verify your email address',
+	description: 'Verify your email address to start using Dribbble',
+}
+
+const VerifyPage = async ({searchParams}: {params: Params, searchParams: Params}) => {
 	await handleRedirects('/verify')
 	const {data: user} = await backend.user.getCurrentUser()
 	const {code} = searchParams

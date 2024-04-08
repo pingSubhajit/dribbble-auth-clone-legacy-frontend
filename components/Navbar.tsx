@@ -2,8 +2,8 @@ import backend from '@/lib/backend/backend'
 import LogoMark from '@/icons/LogoMark'
 import {Button} from '@/components/ui/button'
 import {Search} from 'lucide-react'
-import {Avatar, AvatarImage} from "@/components/ui/avatar";
-import Link from "next/link";
+import {Avatar, AvatarImage} from '@/components/ui/avatar'
+import Link from 'next/link'
 
 const SearchBox = () => {
 	return (
