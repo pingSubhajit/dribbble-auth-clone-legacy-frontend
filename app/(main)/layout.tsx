@@ -5,12 +5,12 @@ import Footer from '@/components/Footer'
 const MainLayout = async ({ children }: { children: ReactNode }) => {
 	return (
 		<div>
-			<div className="px-24">
+			<div className="px-8 xl:px-24">
 				<Navbar />
 				{children}
 			</div>
 
-			<div className="bg-[#FAFAFA] px-24">
+			<div className="bg-[#FAFAFA] px-8 xl:px-24">
 				<Footer />
 			</div>
 		</div>

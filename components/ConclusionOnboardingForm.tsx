@@ -74,7 +74,7 @@ const ConclusionOnboardingForm = () => {
 					control={form.control}
 					name="purpose"
 					render={() => (
-						<FormItem className="grid grid-cols-3 space-y-0 gap-8">
+						<FormItem className="grid grid-rows-3 lg:grid-rows-none lg:grid-cols-3 space-y-0 gap-8">
 							{items.map((item) => (
 								<FormField
 									key={item.id}
@@ -111,7 +111,7 @@ const ConclusionOnboardingForm = () => {
 														field.value?.includes(item.id) && 'absolute inset-x-8 bottom-8'
 													)}>
 														<motion.div layout>
-															<img src={item.image} alt={item.label} className="mb-8"/>
+															<img src={item.image} alt={item.label} className="mb-8 mx-auto"/>
 															<p className="block w-full p-2 text-center font-bold text-lg transition-all">{item.label}</p>
 														</motion.div>
 

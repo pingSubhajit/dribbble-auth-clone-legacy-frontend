@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const SignInPage = async () => {
 	return (
-		<div className="flex flex-col p-10">
+		<div className="flex flex-col p-5 lg:p-10">
 			<p className="text-right mb-16">
 				<span className="mr-2 text-dribbbleBlack">New to Dribbble?</span>
 				<Link href="/auth/sign-up" className="font-semibold text-dribbbleBlue">Sign up</Link>

@@ -81,9 +81,9 @@ const InitialOnboardingForm = () => {
 	return (
 		<Form {...form}>
 			{/* Form */}
-			<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-20">
+			<form onSubmit={form.handleSubmit(onSubmit)}>
 				<h3 className="text-xl font-extrabold">Add an avatar</h3>
-				<div className="mt-8 flex gap-10">
+				<div className="mt-8 flex flex-col lg:flex-row gap-5 xl:gap-10">
 					{/* Avatar */}
 					<div
 						className="relative overflow-hidden h-44 w-44 rounded-full border-2 border-dashed border-zinc-300 flex justify-center items-center">
@@ -119,7 +119,7 @@ const InitialOnboardingForm = () => {
 					control={form.control}
 					name="location"
 					render={({ field }) => (
-						<FormItem className="w-full">
+						<FormItem className="w-full mt-20">
 							<FormLabel className="text-xl font-extrabold">Add your location</FormLabel>
 							<FormControl>
 								<Input placeholder="Enter a location" className="mt-8 bg-transparent border-b-2 border-zinc-300" {...field} />

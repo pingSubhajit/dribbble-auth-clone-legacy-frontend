@@ -62,12 +62,12 @@ const footerLinks = [
 const Footer = () => {
 	return (
 		<footer className="pt-8">
-			<div className="flex gap-16">
-				<div className="w-96">
+			<div className="flex flex-col lg:flex-row gap-16">
+				<div className="w-64 xl:w-80 2xl:w-96">
 					<LogoMark className="w-32"/>
 					<p className="mt-2 text-sm">Dribbble is the world's leading community for creatives to share, grow and get hired.</p>
 				</div>
-				<div className="w-full grid grid-cols-5 gap-8">
+				<div className="w-full grid grid-cols-2 lg:grid-cols-5 gap-6 xl:gap-8">
 					{footerLinks.map((section, index) => (
 						<div key={index}>
 							<h2 className="font-bold mb-4">{section.title}</h2>
